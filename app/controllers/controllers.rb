@@ -3,6 +3,7 @@
 get '/' do
 # login in navbar in layout.erb
 # registration form in home page
+  erb :index
 end
 
 # to register
