@@ -1,0 +1,34 @@
+.navigation {
+  width: 100%;
+  text-align: center;
+  border-bottom: 1px solid #ccc;
+}
+
+.navigation ul {
+  display: block;
+}
+
+.navigation li {
+  display: inline-block;
+}
+
+.container {
+  padding-top: 20px;
+  margin: 0 auto;
+  width: 70%;
+}
+
+#registration {
+  width: 80%;
+  margin: 0 auto;
+}
+
+#registration label input {
+  display: inline-block;
+}
+
+#registration label {
+  width: 30%;
+  text-align: right;
+}
+
