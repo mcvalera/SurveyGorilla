@@ -4,7 +4,7 @@ enable :sessions
 
 
 post '/accounts/new' do
-  @user = User.new(user_name: params[:username])
+  @user = User.new(username: params[:username])
   @user.password = params[:password]
 
   if @user.save
@@ -21,11 +21,8 @@ get '/' do
   erb:index
 end
 
+
 get '/logout' do
   session.delete :user_id
   redirect '/'
 end
-
-
-
-

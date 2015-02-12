@@ -10,8 +10,9 @@ end
 
 # route for profile page
 get "/accounts/:id" do
+  @user = session_current_user
 # button to take a new survey
-# survey list
 # user stats - V2!
+  erb :profile
 end
 
