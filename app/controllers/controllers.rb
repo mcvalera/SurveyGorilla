@@ -3,27 +3,30 @@ enable :sessions
 # note that not these aren't all just get routes.
 
 
-get '/accounts/new' do
-  erb :register
-end
-
 post '/accounts/new' do
   @user = User.new(user_name: params[:username])
   @user.password = params[:password]
 
   if @user.save
     session[:user_id] = @user.id
-    redirect '/accounts/login'
+    redirect "/accounts/#{@user.id}"
+    #redirect "/accounts/"
+
   else
-    erb :register
+    erb :index
   end
 end
 
-post '/login' do
+get '/' do
+  #redirect '/accounts/:user_id' if session[:user_id]
+  erb:index
+end
+
+post '/accounts/login' do
   user = User.find_by(user_name: params[:username])
   if user.password == params[:password]
     session[:user_id] = user.id
-    redirect '/accounts/login'
+    redirect "/accounts/#{@user.id}"
   else
     redirect '/'
   end
@@ -35,19 +38,8 @@ get '/logout' do
 end
 
 
-get '/' do
-redirect '/' unless session[:user_id]
-# login in navbar in layout.erb
-# registration form in home page
-  erb :index
-end
 
 
-
-# to login
-post "/accounts/login" do
-# lead to profile page
-end
 
 # route for profile page
 get "/accounts/:id" do
