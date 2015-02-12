@@ -1,6 +1,7 @@
 get "/surveys" do
 # list of surveys
-# make new survey option
+  @surveys = Survey.all
+  erb :survey_list
 end
 
 get "/surveys/:id" do
