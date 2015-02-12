@@ -1,7 +1,5 @@
 
 enable :sessions
-# note that not these aren't all just get routes.
-
 
 post '/accounts/new' do
   @user = User.new(username: params[:username])
@@ -10,7 +8,6 @@ post '/accounts/new' do
   if @user.save
     session[:user_id] = @user.id
     redirect "/accounts/#{@user.id}"
-    #redirect "/accounts/"
   else
     erb :index
   end
