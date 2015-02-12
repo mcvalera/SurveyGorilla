@@ -1,5 +1,5 @@
 post '/accounts/login' do
-  user = User.find_by(user_name: params[:username])
+  user = User.find_by(username: params[:username])
   if user.password == params[:password]
     session[:user_id] = user.id
     redirect "/accounts/#{user.id}"
@@ -10,9 +10,11 @@ end
 
 # route for profile page
 get "/accounts/:id" do
-  @user = session_current_user
-# button to take a new survey
-# user stats - V2!
+  redirect '/' unless session[:user_id]
+  @user = User.find(session[:user_id])
+
   erb :profile
 end
+
+
 
