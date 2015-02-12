@@ -9,7 +9,7 @@ post '/accounts/new' do
 
   if @user.save
     session[:user_id] = @user.id
-    redirect "/accounts/#{user.id}"
+    redirect "/accounts/#{@user.id}"
     #redirect "/accounts/"
   else
     erb :index

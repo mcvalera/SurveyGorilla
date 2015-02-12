@@ -9,6 +9,7 @@ post '/accounts/login' do
 end
 
 # route for profile page
+# make new survey option
 get "/accounts/:id" do
   @user = session_current_user
 # button to take a new survey
