@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- 
+  <!--
     normalize.css removes cross-browser differences in defaults, e.g.,
     differences in how form elements appear between Firefox and IE
     See: http://necolas.github.com/normalize.css/
@@ -15,9 +15,23 @@
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
   <script src="/js/application.js"></script>
 
-  <title></title>
+  <title>Squirrel Survey</title>
 </head>
 <body>
+<div class="navigation">
+    <ul>
+      <% if session_logged_in? %>
+        <li><p><a href="/">PROFILE</a></p></li>
+        <li><p><a href="/logout">LOG OUT</a></p></li>
+      <% else %>
+        <li><form action="/accounts/login" method="post">
+          USERNAME: <input type="text" name="username">
+          PASSWORD: <input type="password" name="password">
+          <input type="submit" value="Log in"></li>
+        </form>
+      <% end %>
+    </ul>
+  </div>
   <%= yield %>
 </body>
 </html>
