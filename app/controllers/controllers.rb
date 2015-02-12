@@ -45,26 +45,26 @@ end
 
 
 # to login
-get '/accounts/login' do
+post "/accounts/login" do
 # lead to profile page
 end
 
 # route for profile page
-get '/accounts/:id' do
+get "/accounts/:id" do
 # button to take a new survey
 # survey list
 # user stats - V2!
 end
 
-get '/accounts/:id/surveys' do
+get "/accounts/:id/surveys" do
 # list of surveys
 # make new survey option
 end
 
-get '/accounts/:id/surveys/:id' do
+get "/accounts/:id/surveys/:id" do
 # page with description of picked survey
 end
 
-get '/accounts/:id/surveys/take' do
+get "/accounts/:id/surveys/take" do
 # actual link where survey is taken
 end
