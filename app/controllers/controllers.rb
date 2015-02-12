@@ -4,7 +4,7 @@ enable :sessions
 
 
 post '/accounts/new' do
-  @user = User.new(user_name: params[:username])
+  @user = User.new(username: params[:username])
   @user.password = params[:password]
 
   if @user.save
@@ -22,7 +22,7 @@ get '/' do
 end
 
 post '/accounts/login' do
-  user = User.find_by(user_name: params[:username])
+  user = User.find_by(username: params[:username])
   if user.password == params[:password]
     session[:user_id] = user.id
     redirect "/accounts/#{@user.id}"
@@ -47,7 +47,7 @@ get "/accounts/:id" do
 # user stats - V2!
 end
 
-get "/accounts/:id/surveys" do
+get "/surveys" do
 # list of surveys
 # make new survey option
 end
