@@ -11,7 +11,6 @@ post '/accounts/new' do
     session[:user_id] = @user.id
     redirect "/accounts/#{@user.id}"
     #redirect "/accounts/"
-
   else
     erb :index
   end
