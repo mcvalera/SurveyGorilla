@@ -36,5 +36,8 @@ end
 
 get "/surveys/:id/take" do
   @survey = Survey.find(params[:id])
-  erb :take_survey
+  user_id = session[:user_id]
+  questions_left = Selection.unanswered_questions({user_id: user_id, survey_id: @survey.id})
+  next_question = questions_left.sample
+  redirect ("/surveys/%d/question/%d" % [@survey.id, next_question.id])
 end
