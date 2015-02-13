@@ -1,6 +1,17 @@
 <div class="container">
-  <h1>List of Surveys</h1>
-  <% @surveys.each do |survey| %>
-    <p><%= survey.name %></p>
+  <h1>All Surveys</h1>
+  <% @all_surveys.each do |survey| %>
+    <p><a href="/surveys/<%=survey.id%>"><%= survey.name %></a></p>
   <% end %>
+
+  <h1>Surveys Created</h1>
+  <% @surveys_created.each do |survey| %>
+    <p><a href="/surveys/<%=survey.id%>"><%= survey.name %></a></p>
+  <% end %>
+
+  <h1>Surveys Taken</h1>
+  <% @survey_titles.each do |survey| %>
+    <p><a href="/surveys/<%=survey.id%>"><%= survey.name %></a></p>
+  <% end %>
+
 </div>
