@@ -17,4 +17,8 @@ helpers do
     return survey_titles
   end
 
+  def surveys_created
+    Survey.where(user_id: session_current_user.id)
+  end
+
 end
