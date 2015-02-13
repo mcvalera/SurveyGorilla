@@ -35,5 +35,6 @@ get "/surveys/:id" do
 end
 
 get "/surveys/:id/take" do
-# actual link where survey is taken
+  @survey = Survey.find(params[:id])
+  erb :take_survey
 end
