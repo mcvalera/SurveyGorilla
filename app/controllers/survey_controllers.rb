@@ -41,3 +41,8 @@ get "/surveys/:id/take" do
   next_question = questions_left.sample
   redirect ("/surveys/%d/question/%d" % [@survey.id, next_question.id])
 end
+
+get "/surveys/:id/results" do
+  @survey = Survey.find(params[:id])
+  erb :survey_result
+end
