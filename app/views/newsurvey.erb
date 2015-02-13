@@ -1,0 +1,24 @@
+
+
+<div class = "container">
+
+<form action="/surveys/new" method="post">
+  <input type="text" name="survey[name]" placeholder="Survey Name" ><br>
+  <TEXTAREA name = "survey[description]" placeholder="Describe your Survey"></TEXTAREA><br>
+
+  <div class = "question_input">
+    <input type ="text" name = "survey[question_0]" placeholder = "What is your question" >
+    <input type ="text" name = "survey[option_0_0]" placeholder = "Response" >
+    <input type ="text" name = "survey[option_0_1]" placeholder = "Response" >
+  </div>
+
+  <div class = "question_input">
+    <input type ="text" name = "survey[question_1]" placeholder = "What is your question" >
+    <input type ="text" name = "survey[option_1_0]" placeholder = "Response" >
+    <input type ="text" name = "survey[option_1_1]" placeholder = "Response" >
+  </div>
+  <input type="submit" value="Make New Survey">
+
+</form>
+
+</div>

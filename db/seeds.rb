@@ -6,7 +6,7 @@ survey
 question
 {text: }
 option
-{description: }
+{text: }
 =end
 user1 = {username: "marx", password: "uprising"}
 user2 = {username: "smith", password: "hiddenhand"}
