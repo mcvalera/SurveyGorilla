@@ -1,7 +1,9 @@
 get "/surveys" do
 # list of surveys
-# make new survey option
-erb :survey
+
+  @surveys = Survey.all
+  erb :survey_list
+
 end
 
 get "/surveys/:id" do
@@ -12,4 +14,8 @@ end
 
 get "/surveys/:id/take" do
 # actual link where survey is taken
+end
+
+get "/surveys/new" do
+
 end
