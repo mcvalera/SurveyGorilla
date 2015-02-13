@@ -1,6 +1,8 @@
 get "/surveys" do
 # list of surveys
-  @surveys = Survey.all
+  @user = session_current_user
+  @all_surveys = Survey.all
+  @survey_titles = names_of_surveys_taken
   erb :survey_list
 end
 
