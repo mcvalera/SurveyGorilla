@@ -14,7 +14,7 @@ helpers do
     survey_ids.each do |id|
       survey_titles << Survey.find(id)
     end
-    return survey_titles
+    return survey_titles.uniq
   end
 
   def surveys_created
