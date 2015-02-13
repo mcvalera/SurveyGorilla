@@ -1,0 +1,13 @@
+<div class = "container">
+  <%= @question.text %><br>
+  <form
+  action = <%= "/surveys/%d/question/%d" % [@question.survey.id, @question.id] %>
+  method="post">
+    <% @question.options.each do |option| %>
+      <input type= "checkbox"
+      name = <%="answer[%d]" % option.id %>
+      value = "checked"> <%= option.text %> <br>
+    <% end %>
+  <input class= "answer_question" type="submit" value="answer question"><br>
+  </form>
+</div>
