@@ -11,3 +11,6 @@ end
 get "/surveys/:id/take" do
 # actual link where survey is taken
 end
+
+get "/surveys/new" do
+end
