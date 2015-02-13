@@ -21,7 +21,7 @@
   <div class="navigation">
     <ul>
       <% if session_logged_in? %>
-        <li><p><a href="/">PROFILE</a></p></li>
+        <li><p><a href="/accounts/<%= session_current_user.id %>">PROFILE</a></p></li>
         <li><p><a href="/logout">LOG OUT</a></p></li>
       <% else %>
         <li><form action="/accounts/login" method="post">
